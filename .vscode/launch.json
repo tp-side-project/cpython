@@ -1,0 +1,31 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug CPython (gdb) - run script",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/python",
+      "args": ["-X", "dev", "${workspaceFolder}/Tools/scripts/gdb/libpython.py", "-c", "print('hi')"],
+      "cwd": "${workspaceFolder}",
+      "MIMode": "gdb",
+      "miDebuggerPath": "/usr/bin/gdb",
+      "stopAtEntry": false,
+      "externalConsole": false,
+      "setupCommands": [
+        { "description": "Enable pretty printing", "text": "-enable-pretty-printing" }
+      ]
+    },
+    {
+      "name": "Debug CPython (gdb) - run tests",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/python",
+      "args": ["-m", "test", "-j0", "-v", "test_list"],
+      "cwd": "${workspaceFolder}",
+      "MIMode": "gdb",
+      "miDebuggerPath": "/usr/bin/gdb",
+      "externalConsole": false
+    }
+  ]
+}
